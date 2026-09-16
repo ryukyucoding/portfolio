@@ -7,8 +7,8 @@ export interface SocialLink {
 }
 
 export const PROFILE = {
-  shortName: 'Yu',
   name: 'Hsuan-Yu Liu',
+  avatar: '/media/avatar.webp',
   greeting: 'Hi, my name is',
   tagline: 'I build things for the web.',
   location: 'Taipei, Taiwan',

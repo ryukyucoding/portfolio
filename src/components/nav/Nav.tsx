@@ -10,7 +10,8 @@ export function Nav({ activeId }: NavProps) {
     <header className="nav">
       <div className="nav-inner">
         <a className="nav-logo" href="#hero" aria-label="Back to top">
-          <span>{PROFILE.shortName}</span>
+          {/* Decorative: the link already carries its own label. */}
+          <img src={PROFILE.avatar} alt="" width={50} height={50} />
         </a>
 
         <nav aria-label="Section navigation">
