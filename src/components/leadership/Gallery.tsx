@@ -6,34 +6,49 @@ interface GalleryProps {
   readonly label: string;
 }
 
+/** Keep the neighbours mounted so stepping cross-fades instead of popping. */
+const neighbours = (index: number, count: number): number[] =>
+  [index - 1, index, index + 1].filter((i) => i >= 0 && i < count);
+
 /**
  * Cross-fading carousel inside a timeline card. Slides are letterboxed onto a
  * blurred copy of themselves, so portrait phone screenshots and landscape
  * photos can sit in the same gallery without either being cropped.
+ *
+ * Only the visible slide and its neighbours are mounted. Rendering the whole
+ * set at once made the browser fetch every photo the moment a card neared the
+ * viewport — twelve downloads to show one picture.
  */
 export function Gallery({ images, label }: GalleryProps) {
   const [index, setIndex] = useState(0);
-  const step = (delta: number) =>
-    setIndex((current) => (current + delta + images.length) % images.length);
+  const [mounted, setMounted] = useState<readonly number[]>(() => neighbours(0, images.length));
+
+  const step = (delta: number) => {
+    const next = (index + delta + images.length) % images.length;
+    setIndex(next);
+    setMounted((current) => [...new Set([...current, ...neighbours(next, images.length)])]);
+  };
 
   return (
     <div className="gallery">
-      {images.map((src, i) => (
-        <div
-          key={src}
-          className={i === index ? 'gallery-slide is-active' : 'gallery-slide'}
-          aria-hidden={i !== index}
-        >
-          <span className="gallery-wash" style={{ backgroundImage: `url("${src}")` }} />
-          <img
-            src={src}
-            alt={`${label} — photo ${i + 1} of ${images.length}`}
-            className="gallery-image"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      ))}
+      {images.map((src, i) =>
+        mounted.includes(i) ? (
+          <div
+            key={src}
+            className={i === index ? 'gallery-slide is-active' : 'gallery-slide'}
+            aria-hidden={i !== index}
+          >
+            <span className="gallery-wash" style={{ backgroundImage: `url("${src}")` }} />
+            <img
+              src={src}
+              alt={`${label} — photo ${i + 1} of ${images.length}`}
+              className="gallery-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ) : null,
+      )}
 
       {images.length > 1 && (
         <>

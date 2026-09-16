@@ -48,7 +48,7 @@ export const PROJECTS: readonly Project[] = [
     period: 'Oct 2025 – Dec 2025',
     summary:
       'A top-down 2D tank shooter where every bullet ricochets off walls, so angles matter more than aim — you flush enemies out of cover instead of shooting at them. Kills earn points across movement speed, bullet speed and fire rate, and clearing certain levels opens a diep.io-style barrel evolution wheel (long and thin for velocity, thick for area, or multi-barrel for volume). Four enemy types escalate from stationary turrets to a purple AI that actively dodges incoming fire. I built the enemy AI behaviours and the game UI — menus, level transitions, the in-game HUD and audio.',
-    image: '/media/projects/ten-tan-tanks.png',
+    image: '/media/projects/ten-tan-tanks.webp',
     imageFit: 'contain',
     links: [
       {
