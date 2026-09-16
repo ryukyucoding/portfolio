@@ -1,0 +1,159 @@
+@import './tokens.css';
+@import './typography.css';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: #1a0b2e;
+}
+
+/* Fixed photographic backdrop + scroll-reactive colour wash.
+   Both live on pseudo-elements so nothing in the flow repaints as it scrolls. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/media/backdrop.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--backdrop-from), var(--backdrop-opacity)),
+    rgba(var(--backdrop-via), calc(var(--backdrop-opacity) + 0.1)),
+    rgba(var(--backdrop-to), var(--backdrop-opacity))
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  z-index: 2000;
+  padding: 12px 20px;
+  background-color: var(--color-accent);
+  color: #1a0b2e;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+}
+
+/* Scroll-reveal primitive used by every section */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease-out-expo),
+    transform 700ms var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+
+.reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Horizontal rails share one scrollbar-free treatment */
+.rail-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+}
+
+.rail-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0b2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

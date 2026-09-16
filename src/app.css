@@ -1,0 +1,24 @@
+.main {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding-inline: var(--space-gutter);
+  padding-top: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer {
+  padding-block: 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-glass);
+}
+
+.footer p {
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding-inline: 15px;
+  }
+}

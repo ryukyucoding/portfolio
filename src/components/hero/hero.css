@@ -1,0 +1,104 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-section);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-greeting {
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-size: var(--text-display);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: var(--text-display-sub);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink-muted);
+  margin-bottom: 30px;
+}
+
+.hero-description {
+  font-size: var(--text-xl);
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.hero-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 4px;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid transparent;
+}
+
+.hero-resume:hover,
+.hero-resume:focus-visible {
+  color: var(--color-accent);
+  border-bottom-color: currentColor;
+}
+
+/* Staggered entrance — the hero is above the fold, so it plays on load. */
+.hero-content > * {
+  opacity: 0;
+  animation: hero-rise 700ms var(--ease-out-expo) forwards;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: 100ms; }
+.hero-content > *:nth-child(2) { animation-delay: 200ms; }
+.hero-content > *:nth-child(3) { animation-delay: 300ms; }
+.hero-content > *:nth-child(4) { animation-delay: 400ms; }
+.hero-content > *:nth-child(5) { animation-delay: 500ms; }
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > * {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}

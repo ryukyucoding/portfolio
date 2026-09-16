@@ -1,0 +1,81 @@
+/* Breaks out of the centred content column to run edge-to-edge. */
+.hrail {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.hrail-scroller {
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0,
+    black 48px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+  mask: linear-gradient(
+    to right,
+    transparent 0,
+    black 48px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+}
+
+.hrail-scroller:focus-visible {
+  outline-offset: -4px;
+}
+
+.hrail-row {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  /* Aligns the first item with the centred content column above it. */
+  padding-inline: max(var(--space-gutter), calc(50vw - var(--width-content) / 2 + var(--space-gutter)));
+}
+
+.hrail-arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--color-ink);
+  background-color: rgba(26, 11, 46, 0.72);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    background-color var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.hrail-arrow:hover:not(:disabled) {
+  background-color: rgba(218, 112, 214, 0.8);
+  transform: scale(1.08);
+}
+
+.hrail-arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hrail-arrow-prev {
+  left: 16px;
+}
+
+.hrail-arrow-next {
+  right: 16px;
+}
+
+@media (max-width: 640px) {
+  .hrail-arrow {
+    display: none;
+  }
+}
