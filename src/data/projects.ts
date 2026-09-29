@@ -45,8 +45,7 @@ export const PROJECTS: readonly Project[] = [
     id: 'caring-machine',
     title: 'Caring Machine — NTU IM Senior Capstone',
     stack: 'Multimodal AI, Reinforcement Learning, Knowledge Graph',
-    // TODO(confirm): start date.
-    period: '2026 – Present',
+    period: 'Feb 2026 – Present',
     summary:
       "A five-person capstone building a multimodal AI companion that continuously reads a user's emotional state from voice, visual cues and behavioural signals, and offers context-aware companionship and assistance. A Person-State-Action knowledge graph captures how each user's emotional states should be interpreted, so the agent personalises which action it takes and keeps adapting through reinforcement from user feedback. I was responsible for the empirical validation of the system.",
     links: [{ icon: 'wrench', label: 'Working on' }],

@@ -32,7 +32,6 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     org: 'Microsoft',
     role: 'AI Development Intern',
     orgFull: 'Microsoft project, via Beyondsoft',
-    // TODO(confirm): location.
     location: 'Taipei, Taiwan',
     period: 'Sept 2026 – Present',
     photoAlt: 'Microsoft project via Beyondsoft',

@@ -11,11 +11,9 @@
 
 ## 2. Experience — Microsoft (via Beyondsoft)（`src/data/experience.ts`）
 
-- **地點**：目前先寫 `Taipei, Taiwan`，請確認（程式裡有 `TODO(confirm)`）。
 - **技術棧**：目前只寫 `RAG / LLM / Full-stack`，可補 Azure、Python、TypeScript、框架等。
 - **量化成果**：有的話補進 highlights（例如文件量、回答準確率、服務的客戶數）。
 - **照片**：目前沒有照片，右側顯示自動產生的「Microsoft」色塊。有照片就放 `public/media/work/microsoft.webp`，並在該筆資料加上 `photo: '/media/work/microsoft.webp'`。
-- 確認 NDA：能不能寫出專案名稱或更具體的內容。
 
 ## 3. Experience — WIDM Lab
 
@@ -25,12 +23,10 @@
 ## 4. Experience — Mitacs
 
 - 研究產出（原型、user study、投稿）有的話補一句。
-- 結束月份目前寫 `Sept 2026`，請確認。
 
 ## 5. Projects — Caring Machine（`src/data/projects.ts`）
 
 - **論文結果這幾天出來** → 錄取就在 summary 補一句（例如 "Accepted to …"），並把 `Working on` 旁加一個連結或徽章；未錄取就維持不寫。WISE 2026 那篇不列。
-- **開始時間**：目前寫 `2026 – Present`，請確認（有 `TODO(confirm)`）。
 - **實證的細節**：你負責的 empirical validation 是什麼形式？受試者人數？主要結果？補上會比現在具體很多。
 - 可以的話補一張截圖或 demo 圖到 `public/media/projects/caring-machine.webp`（沒圖會顯示自動產生的封面）。
 
