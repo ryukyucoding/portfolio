@@ -52,6 +52,26 @@
   display: block;
 }
 
+/* Generated cover for an entry without a photo yet. */
+.xp-photo-cover {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(120% 120% at 15% 10%, rgba(218, 112, 214, 0.45), transparent 60%),
+    radial-gradient(100% 100% at 85% 90%, rgba(100, 120, 255, 0.4), transparent 55%),
+    linear-gradient(135deg, rgba(75, 0, 130, 0.65), rgba(25, 25, 112, 0.65));
+}
+
+.xp-photo-cover span {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
 /* Tab strip — a vertical rail with a sliding accent edge. */
 .xp-tabs {
   display: flex;

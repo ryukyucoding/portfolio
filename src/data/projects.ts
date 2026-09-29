@@ -42,6 +42,25 @@ export const PROJECTS: readonly Project[] = [
     ],
   },
   {
+    id: 'caring-machine',
+    title: 'Caring Machine — NTU IM Senior Capstone',
+    stack: 'Multimodal AI, Reinforcement Learning, Knowledge Graph',
+    // TODO(confirm): start date.
+    period: '2026 – Present',
+    summary:
+      "A five-person capstone building a multimodal AI companion that continuously reads a user's emotional state from voice, visual cues and behavioural signals, and offers context-aware companionship and assistance. A Person-State-Action knowledge graph captures how each user's emotional states should be interpreted, so the agent personalises which action it takes and keeps adapting through reinforcement from user feedback. I was responsible for the empirical validation of the system.",
+    links: [{ icon: 'wrench', label: 'Working on' }],
+  },
+  {
+    id: 'slide-rag',
+    title: 'Slide Retrieval RAG Pipeline',
+    stack: 'Python, ColQwen2.5, Visual HyDE, VLM reranking',
+    period: 'Mar 2026 – Apr 2026',
+    summary:
+      'A three-stage visual RAG pipeline for retrieving the right lecture slide for a question: ColQwen2.5 multi-vector retrieval, Visual HyDE query expansion, and VLM reranking. Took accuracy from 0.460 to 0.933 over 16 ablation phases, placing 6th of 120 in the class Kaggle competition.',
+    links: [{ icon: 'trophy', label: '6th / 120 on Kaggle' }],
+  },
+  {
     id: 'ten-tan-tank',
     title: 'Ten Tan Tanks!!!',
     stack: 'Unity, C#, 2D physics, enemy AI',

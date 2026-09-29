@@ -45,16 +45,24 @@ export function Experience() {
                 key={entry.id}
                 className={index === activeIndex ? 'xp-photo-slide is-active' : 'xp-photo-slide'}
               >
-                <span className="xp-photo-wash" style={{ backgroundImage: `url("${entry.photo}")` }} />
-                <img
-                  src={entry.photo}
-                  alt={entry.photoAlt}
-                  className="xp-photo-img"
-                  width={1000}
-                  height={750}
-                  loading="lazy"
-                  decoding="async"
-                />
+                {entry.photo ? (
+                  <>
+                    <span className="xp-photo-wash" style={{ backgroundImage: `url("${entry.photo}")` }} />
+                    <img
+                      src={entry.photo}
+                      alt={entry.photoAlt}
+                      className="xp-photo-img"
+                      width={1000}
+                      height={750}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </>
+                ) : (
+                  <div className="xp-photo-cover">
+                    <span>{entry.org}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
