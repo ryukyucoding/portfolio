@@ -16,8 +16,8 @@ export interface ExperienceEntry {
   readonly orgHref?: string;
   readonly location: string;
   readonly period: string;
-  /** Shown in the square panel beside the tabs; swaps as tabs change. */
-  readonly photo: string;
+  /** Shown in the square panel beside the tabs; swaps as tabs change. Omit for a generated cover. */
+  readonly photo?: string;
   readonly photoAlt: string;
   readonly highlights: readonly string[];
   readonly stack: readonly string[];
@@ -28,18 +28,33 @@ export interface ExperienceEntry {
 /** Most recent first — the tab strip and the mobile list both read in this order. */
 export const EXPERIENCE: readonly ExperienceEntry[] = [
   {
+    id: 'microsoft',
+    org: 'Microsoft',
+    role: 'AI Development Intern',
+    orgFull: 'Microsoft project, via Beyondsoft',
+    location: 'Taipei, Taiwan',
+    period: 'Sept 2026 – Present',
+    photoAlt: 'Microsoft project via Beyondsoft',
+    highlights: [
+      'Assigned to a Microsoft AI project through Beyondsoft.',
+      'Building RAG systems over Microsoft documentation.',
+      'Supporting customer implementations and developing full-stack features across frontend and backend components.',
+    ],
+    stack: ['RAG', 'LLM', 'Full-stack'],
+  },
+  {
     id: 'mitacs',
     org: 'Mitacs',
     role: 'Mitacs Globalink Research Intern',
     orgFull: 'Montréal HCI Group, Université de Montréal',
     orgHref: 'https://hci.iro.umontreal.ca/',
     location: 'Montréal, Canada',
-    period: 'June 2026 – Present',
+    period: 'June 2026 – Sept 2026',
     photo: '/media/work/mitacs.webp',
     photoAlt: 'Outside Pavillon André-Aisenstadt at Université de Montréal',
     highlights: [
       'Selected for the Mitacs Globalink Research Internship — a fully-funded competitive international program (~CAD 12,000) — to conduct HCI research under Prof. Damien Masson.',
-      'Designing a graphical, AI-assisted music composition interface that lets non-expert users manipulate melody, harmony, and rhythm directly, without needing music production skills.',
+      'Designed a graphical, AI-assisted music composition interface that lets non-expert users manipulate melody, harmony, and rhythm directly, without needing music production skills.',
     ],
     stack: ['HCI Research', 'Interaction Design', 'Generative AI'],
     links: [
@@ -56,7 +71,7 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     role: 'Software Engineer Intern',
     orgFull: 'Printage, Inc. (智見科技)',
     location: 'Hsinchu, Taiwan',
-    period: 'Feb 2026 – Present',
+    period: 'Feb 2026 – Aug 2026',
     photo: '/media/work/printage.webp',
     photoAlt: 'The Printage team together at the office',
     highlights: [
@@ -78,8 +93,9 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     photo: '/media/work/widm.webp',
     photoAlt: 'With the WIDM Lab research group',
     highlights: [
-      'Built a natural-language-to-n8n agentic pipeline: GPT-4o intent detection, a fine-tuned LLM for node operations (Create / Modify / Delete / Insert), and ChromaDB-backed RAG over a self-constructed knowledge graph.',
-      'Achieved 14.3% / 47.7% gains in Node / Connection F1 over a pure-LLM baseline; paper in preparation.',
+      'Built an AI-powered Copilot for the n8n automation platform that turns natural-language commands into executable workflows, outperforming the official n8n AI chatbot by 20% on average.',
+      'Decomposed complex user instructions into workflow manipulation tasks (Create / Insert / Delete / Modify), each with a task-specific pipeline: GPT-4o intent detection, a fine-tuned LLM for node operations, and ChromaDB-backed RAG over a self-constructed knowledge graph.',
+      'Improved the harness around the agent architecture, and achieved 14.3% / 47.7% gains in Node / Connection F1 over a pure-LLM baseline; paper in preparation.',
     ],
     stack: ['Python', 'GPT-4o', 'RAG', 'ChromaDB', 'Knowledge Graph', 'n8n'],
   },

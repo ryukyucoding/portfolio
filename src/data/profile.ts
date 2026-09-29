@@ -15,7 +15,7 @@ export const PROFILE = {
   email: 'hsuanyuu.liu@gmail.com',
   resumeHref: '/media/docs/resume.pdf',
   intro:
-    "I'm an Information Management student at [[NTU]] building full-stack products and doing research in [[HCI]] and [[applied AI]] — currently a Mitacs Globalink research intern in Montréal and a software engineer intern at Printage.",
+    "I'm an Information Management student at [[NTU]] building full-stack products and doing research in [[HCI]] and [[applied AI]] — currently an AI development intern on a Microsoft project and a research assistant at NCU's WIDM Lab.",
 } as const;
 
 export const SOCIALS: readonly SocialLink[] = [
@@ -50,7 +50,8 @@ export const EDUCATION = {
   period: 'Expected June 2027',
   gpa: 'cGPA 4.18 / 4.3',
   honors: [
-    'Academic Achievement Award ×2 — ranked 1st / 55, Fall 2025',
+    'Academic Achievement Award ×3 — Spring 2024, Fall 2025 (ranked 1st / 55), Spring 2026',
+    'Ranked 6th / 84 in the department (top 7%)',
     "President's Award, 2025",
     'Web Programming — ranked 1st / 150',
   ],
@@ -70,7 +71,7 @@ export const ABOUT = {
   portrait: '/media/portrait.webp',
   paragraphs: [
     "Hello! I'm Hsuan-Yu — most people call me Sherry. I study Information Management at National Taiwan University, and I enjoy the stretch between [[research]] and [[shipping]]: figuring out what people actually need, then building the thing that does it.",
-    'Right now I split my time three ways — [[HCI research]] at Université de Montréal on AI-assisted music composition, [[product work]] at Printage on an AI companion app with 250K+ users, and an [[LLM agent]] pipeline at NCU\'s WIDM Lab. Along the way I\'ve picked up full-stack development, a fondness for well-shaped data models, and the habit of measuring whether a change actually helped.',
+    'Right now I split my time three ways — [[AI development]] on a Microsoft project, building RAG systems over Microsoft documentation; an [[LLM agent]] Copilot for n8n at NCU\'s WIDM Lab; and [[Caring Machine]], my senior capstone, a multimodal AI companion that learns from user feedback. Before that I did [[HCI research]] at Université de Montréal on AI-assisted music composition and [[product work]] at Printage on an AI companion app with 250K+ users. Along the way I\'ve picked up full-stack development, a fondness for well-shaped data models, and the habit of measuring whether a change actually helped.',
     "When I'm not coding, I love [[traveling]], [[river tracing]], and [[scuba diving]] — always seeking new experiences and perspectives!",
   ],
   currentStackLead: "Here are a few technologies I've been working with recently:",
